@@ -1,11 +1,15 @@
 import React from 'react';
-import { StyleSheet, Text, View } from 'react-native';
+import { Dimensions, Image, View } from 'react-native';
 
 export default class ImageContainer extends React.Component {
   render() {
+    var { height, width } = Dimensions.get('window');
     return (
       <View>
-        <Text>Image Here</Text>
+        <Image
+          style={{height: width, width: width}}
+          source={require('../images/PortlandTest.jpg')} 
+        />
       </View>
     );
   }
