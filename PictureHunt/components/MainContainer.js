@@ -23,8 +23,20 @@ export default class MainContainer extends React.Component {
         long = position.coords.longitude;
         console.log('lat: ' + lat)
         console.log('long: ' + long)
+        
+        this.setState({
+          latitude: lat,
+          longitude: long
+        });
       },
-      (err) => { console.log(err) },
+      (err) => {
+          console.log(err);
+          this.setState({
+            latitude: null,
+            longitude: null,
+            error: err
+          });
+        },
       { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
     );
   }
