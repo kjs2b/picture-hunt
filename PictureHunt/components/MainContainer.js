@@ -6,8 +6,30 @@ import FeedbackContainer from './FeedbackContainer';
 var { height, width } = Dimensions.get('window');
 
 export default class MainContainer extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      latitude: null,
+      longitude: null,
+      error: null
+    };
+
+    this.handleButtonPress = this.handleButtonPress.bind(this);
+  }
+
+  handleButtonPress() {
+    navigator.geolocation.getCurrentPosition((position) => {
+        lat = position.coords.latitude;
+        long = position.coords.longitude;
+        console.log('lat: ' + lat)
+        console.log('long: ' + long)
+      },
+      (err) => { console.log(err) },
+      { enableHighAccuracy: true, timeout: 20000, maximumAge: 1000 }
+    );
+  }
+
   render() {
-    
     return (
       <View>
         <Text
@@ -17,7 +39,12 @@ export default class MainContainer extends React.Component {
         </Text>
         <ImageContainer
         />
-        <FeedbackContainer/>
+        <FeedbackContainer
+          onButtonPress={this.handleButtonPress}
+          lat={this.state.latitude}
+          long={this.state.longitude}
+          error={this.state.error}
+        />
       </View>
     );
   }
