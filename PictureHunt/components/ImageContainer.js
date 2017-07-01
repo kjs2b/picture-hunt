@@ -7,7 +7,7 @@ export default class ImageContainer extends React.Component {
     return (
       <View>
         <Image
-          style={{height: width, width: width}}
+          style={{marginTop: 15, height: width, width: width}}
           source={require('../images/PortlandTest.jpg')} 
         />
       </View>

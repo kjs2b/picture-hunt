@@ -3,17 +3,30 @@ import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import ImageContainer from './ImageContainer';
 import FeedbackContainer from './FeedbackContainer';
 
+var { height, width } = Dimensions.get('window');
+
 export default class MainContainer extends React.Component {
   render() {
-    //var { height, width } = Dimensions.get('window');
+    
     return (
       <View>
-        <Text>Hello Love</Text>
+        <Text
+          style={styles.header}
+        >
+          Picture Hunt
+        </Text>
         <ImageContainer
-          //style={{height: width, width: width}}
         />
         <FeedbackContainer/>
       </View>
     );
   }
 }
+
+const styles = {
+  header: {
+    fontSize: 40,
+    alignSelf: 'center',
+    marginTop: 45
+  }
+};

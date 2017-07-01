@@ -5,12 +5,11 @@ export default class FeedbackContainer extends React.Component {
   render() {
     return (
       <View>
-        <Text>Feedback & Button Here</Text>
         <TouchableHighlight
           onPress={() => console.log('Button pressed!')}
           style={styles.buttonStyle}
         >
-          <Text>I found it!?</Text>
+          <Text style={styles.buttonText}>I found it!?</Text>
         </TouchableHighlight>
       </View>
     );
@@ -21,6 +20,13 @@ const styles = {
   buttonStyle: {
     borderColor: 'black',
     borderWidth: 2,
-    borderRadius: 5
+    borderRadius: 5,
+    alignSelf: 'center',
+    paddingLeft: 15,
+    paddingRight: 15,
+    marginTop: 110
+  },
+  buttonText: {
+    fontSize: 30
   }
 }
