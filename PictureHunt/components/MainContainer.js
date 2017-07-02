@@ -52,6 +52,21 @@ export default class MainContainer extends React.Component {
     else if (this.state.currentNumber === 1) this.setState({ currentNumber: 2, currentImage: require('../images/30.jpg') });
     else if (this.state.currentNumber === 2) this.setState({ currentNumber: 3, currentImage: require('../images/40.jpg') });
     else if (this.state.currentNumber === 3) this.setState({ currentNumber: 4, currentImage: require('../images/50.jpg') });
+    else if (this.state.currentNumber === 4) this.setState({ currentNumber: 5, currentImage: require('../images/60.jpg') });
+    else if (this.state.currentNumber === 5) this.setState({ currentNumber: 6, currentImage: require('../images/70.jpg') });
+    else if (this.state.currentNumber === 6) this.setState({ currentNumber: 7, currentImage: require('../images/80.jpg') });
+    else if (this.state.currentNumber === 7) this.setState({ currentNumber: 8, currentImage: require('../images/90.jpg') });
+    else if (this.state.currentNumber === 8) this.setState({ currentNumber: 9, currentImage: require('../images/100.jpg') });
+    else if (this.state.currentNumber === 9) this.setState({ currentNumber: 10, currentImage: require('../images/110.jpg') });
+    else if (this.state.currentNumber === 10) this.setState({ currentNumber: 11, currentImage: require('../images/120.jpg') });
+    else if (this.state.currentNumber === 11) this.setState({ currentNumber: 12, currentImage: require('../images/140.jpg') });
+    else if (this.state.currentNumber === 12) this.setState({ currentNumber: 13, currentImage: require('../images/150.jpg') });
+    else if (this.state.currentNumber === 13) this.setState({ currentNumber: 14, currentImage: require('../images/160.jpg') });
+    else if (this.state.currentNumber === 14) this.setState({ currentNumber: 15, currentImage: require('../images/170.png') });
+    else if (this.state.currentNumber === 15) this.setState({ currentNumber: 16, currentImage: require('../images/180.jpg') });
+    else if (this.state.currentNumber === 16) this.setState({ currentNumber: 17, currentImage: require('../images/190.jpg') });
+    //else if (this.state.currentNumber === 17) this.setState({ currentNumber: 18, currentImage: require('../images/200.jpg') });
+    
     console.log(this.state.currentNumber);
     console.log(this.state.currentImage);
     //else if (this.state.currentNumber = 1) this.setState({ currentNumber: 2, currentImage: require('../images/30.jpg') })
