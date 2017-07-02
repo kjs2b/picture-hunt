@@ -13,10 +13,38 @@ export default class MainContainer extends React.Component {
       latitude: null,
       longitude: null,
       error: null,
-      currentImage: 0
+      currentNumber: 0,
+      currentImage: null
     };
 
     this.handleButtonPress = this.handleButtonPress.bind(this);
+  }
+
+  ComponentDidMount() {
+    var currImg;
+    if (this.state.currentNumber = 0) currImg = require('../images/10.jpg')
+    else if (this.state.currentNumber = 1) currImg = require('../images/20.jpg')
+    else if (this.state.currentNumber = 2) currImg = require('../images/30.jpg')
+    else if (this.state.currentNumber = 3) currImg = require('../images/40.jpg')
+    else if (this.state.currentNumber = 4) currImg = require('../images/50.jpg')
+    else if (this.state.currentNumber = 5) currImg = require('../images/60.jpg')
+    else if (this.state.currentNumber = 6) currImg = require('../images/70.jpg')
+    else if (this.state.currentNumber = 7) currImg = require('../images/80.jpg')
+    else if (this.state.currentNumber = 8) currImg = require('../images/90.jpg')
+    else if (this.state.currentNumber = 9) currImg = require('../images/100.jpg')
+    else if (this.state.currentNumber = 10) currImg = require('../images/110.jpg')
+    else if (this.state.currentNumber = 11) currImg = require('../images/120.jpg')
+    else if (this.state.currentNumber = 12) currImg = require('../images/130.png')
+    else if (this.state.currentNumber = 13) currImg = require('../images/140.jpg')
+    else if (this.state.currentNumber = 14) currImg = require('../images/150.jpg')
+    else if (this.state.currentNumber = 15) currImg = require('../images/160.jpg')
+    else if (this.state.currentNumber = 16) currImg = require('../images/170.png')
+    else if (this.state.currentNumber = 17) currImg = require('../images/180.jpg')
+    else if (this.state.currentNumber = 18) currImg = require('../images/190.jpg')
+
+    this.setState({
+      currentImage: currImg
+    });
   }
 
   handleButtonPress() {
@@ -53,7 +81,8 @@ export default class MainContainer extends React.Component {
           Picture Hunt
         </Text>
         <ImageContainer
-          imgName={imageData[this.state.currentImage]['name']}
+          //imgName={imageData[this.state.currentImage]['name']}
+          img={require('../images/10.jpg')}
         />
         <FeedbackContainer
           onButtonPress={this.handleButtonPress}
