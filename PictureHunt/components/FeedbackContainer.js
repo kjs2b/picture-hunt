@@ -4,18 +4,13 @@ import { Text, View, TouchableHighlight } from 'react-native';
 export default class FeedbackContainer extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      latitude: null,
-      longitude: null,
-      error: null
-    };
+    this.state = {};
   }
   render() {
     return (
       <View>
-        <Text>Lat: {this.props.lat}</Text>
-        <Text>Long: {this.props.long}</Text>
-        <Text>Error: {this.props.error}</Text>
+        {/*<Text>Lat: {this.props.lat}, Long: {this.props.long}</Text>*/}
+        <Text style={{fontSize: 20}}>{this.props.feedback}</Text>
         <TouchableHighlight
           onPress={() => {
             console.log('Button pressed!');
