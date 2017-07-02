@@ -2,6 +2,7 @@ import React from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import ImageContainer from './ImageContainer';
 import FeedbackContainer from './FeedbackContainer';
+//import image from '../images/IMG_3584.JPG';
 
 var { height, width } = Dimensions.get('window');
 
