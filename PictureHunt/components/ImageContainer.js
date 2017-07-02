@@ -9,8 +9,6 @@ export default class ImageContainer extends React.Component {
 
   render() {
     var { height, width } = Dimensions.get('window');
-    //var imgPath = `../images/${this.props.imgName}`;
-    //var img = require(this.props.imgName);
 
     return (
       <View>
