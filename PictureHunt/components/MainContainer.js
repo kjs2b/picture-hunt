@@ -2,7 +2,7 @@ import React from 'react';
 import { Dimensions, StyleSheet, Text, View } from 'react-native';
 import ImageContainer from './ImageContainer';
 import FeedbackContainer from './FeedbackContainer';
-//import image from '../images/IMG_3584.JPG';
+import imageData from '../images/imageData';
 
 var { height, width } = Dimensions.get('window');
 
@@ -12,7 +12,8 @@ export default class MainContainer extends React.Component {
     this.state = {
       latitude: null,
       longitude: null,
-      error: null
+      error: null,
+      currentImage: 0
     };
 
     this.handleButtonPress = this.handleButtonPress.bind(this);
@@ -43,6 +44,7 @@ export default class MainContainer extends React.Component {
   }
 
   render() {
+    console.log(imageData);
     return (
       <View>
         <Text
@@ -51,6 +53,7 @@ export default class MainContainer extends React.Component {
           Picture Hunt
         </Text>
         <ImageContainer
+          imgName={imageData[this.state.currentImage]['name']}
         />
         <FeedbackContainer
           onButtonPress={this.handleButtonPress}
