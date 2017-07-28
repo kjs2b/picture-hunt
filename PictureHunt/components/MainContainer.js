@@ -24,33 +24,6 @@ export default class MainContainer extends React.Component {
     this.handleButtonPress = this.handleButtonPress.bind(this);
   }
 
-  // ComponentDidMount() {
-  //   var currImg;
-  //   if (this.state.currentNumber = 0) currImg = require('../images/10.jpg')
-  //   else if (this.state.currentNumber = 1) currImg = require('../images/20.jpg')
-  //   else if (this.state.currentNumber = 2) currImg = require('../images/30.jpg')
-  //   else if (this.state.currentNumber = 3) currImg = require('../images/40.jpg')
-  //   else if (this.state.currentNumber = 4) currImg = require('../images/50.jpg')
-  //   else if (this.state.currentNumber = 5) currImg = require('../images/60.jpg')
-  //   else if (this.state.currentNumber = 6) currImg = require('../images/70.jpg')
-  //   else if (this.state.currentNumber = 7) currImg = require('../images/80.jpg')
-  //   else if (this.state.currentNumber = 8) currImg = require('../images/90.jpg')
-  //   else if (this.state.currentNumber = 9) currImg = require('../images/100.jpg')
-  //   else if (this.state.currentNumber = 10) currImg = require('../images/110.jpg')
-  //   else if (this.state.currentNumber = 11) currImg = require('../images/120.jpg')
-  //   else if (this.state.currentNumber = 12) currImg = require('../images/130.png')
-  //   else if (this.state.currentNumber = 13) currImg = require('../images/140.jpg')
-  //   else if (this.state.currentNumber = 14) currImg = require('../images/150.jpg')
-  //   else if (this.state.currentNumber = 15) currImg = require('../images/160.jpg')
-  //   else if (this.state.currentNumber = 16) currImg = require('../images/170.png')
-  //   else if (this.state.currentNumber = 17) currImg = require('../images/180.jpg')
-  //   else if (this.state.currentNumber = 18) currImg = require('../images/190.jpg')
-
-  //   this.setState({
-  //     currentImage: currImg
-  //   });
-  // }
-
   handleButtonPress() {
     var lat;
     var long;
@@ -65,7 +38,7 @@ export default class MainContainer extends React.Component {
             longitude: long
           });
 
-          if((Math.abs(this.state.currentImageLat - lat) < .001 && Math.abs(this.state.currentImageLong - long) < .001) || (this.state.numAttempts > 75)) {
+          if((Math.abs(this.state.currentImageLat - lat) < .001 && Math.abs(this.state.currentImageLong - long) < .001) || (this.state.numAttempts > 10)) {
             this.setState({feedback: 'You found it! On to the next one!', numAttempts: 0});
             if (this.state.currentNumber === 0) this.setState({ currentNumber: 1, currentImage: require('../images/20.jpg'), currentImageLat: 45.5087, currentImageLong: -122.6517 });
             else if (this.state.currentNumber === 1) this.setState({ currentNumber: 2, currentImage: require('../images/30.jpg'), currentImageLat: 45.5086, currentImageLong: -122.6473 });
@@ -84,7 +57,7 @@ export default class MainContainer extends React.Component {
             //else if (this.state.currentNumber === 14) this.setState({ currentNumber: 15, currentImage: require('../images/170.png'), currentImageLat: , currentImageLong:  });
             else if (this.state.currentNumber === 14) this.setState({ currentNumber: 15, currentImage: require('../images/180.jpg'), currentImageLat: 45.5188, currentImageLong: -122.6790 });
             else if (this.state.currentNumber === 15) this.setState({ currentNumber: 16, currentImage: require('../images/190.jpg'), currentImageLat: 45.5256, currentImageLong: -122.6660 });
-            else if (this.state.currentNumber === 16) this.setState({ feedback: 'The end. Happy 6-7 month anniversary!   I love you.' });
+            else if (this.state.currentNumber === 16) this.setState({ feedback: 'Congratulations, you\'ve reached the end!' });
           } else {
             this.setState({feedback: 'Not there yet. Keep searching!', numAttempts: this.state.numAttempts + 1});
           }
